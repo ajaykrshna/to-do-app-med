@@ -34,7 +34,7 @@ nav {
   padding: 15px 40px;
 }
 
-.header--search input{
+.header--search input {
   border: 1px solid #E2E8F0;
   color: #94A3B8;
   align-self: flex-end;
@@ -48,8 +48,12 @@ nav {
   font-weight: 100;
 }
 
-.task{
-  margin: 50px;
+.todobody {
+  display: flex;
+}
+
+.task {
+  margin: 20px;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
   max-width: 300px;
@@ -57,16 +61,19 @@ nav {
   flex-direction: column;
 }
 
-.task:hover{
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.task:hover {
+  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.25);
 }
-.task--data{
-  border-bottom: 1px solid #E2E8F0 ;
+
+.task--data {
+  border-bottom: 1px solid #E2E8F0;
   padding: 25px;
 }
-.task--name{
+
+.task--name {
   font-size: 1.6rem;
 }
+
 .task--info {
   margin-top: 8px;
   color: #94A3B8;
@@ -75,9 +82,10 @@ nav {
   letter-spacing: 0.015rem;
 }
 
-.task--type--container{
+.task--type--container {
   display: flex;
 }
+
 .task--type {
   margin-top: 15px;
   padding: 9px;
@@ -92,15 +100,16 @@ nav {
 .task--date {
   padding: 15px 25px;
   display: flex;
-  align-content: flex-end;
   align-items: center;
   margin-right: auto;
 }
+
 .task--date--day {
   margin-left: 7px;
   color: #94A3B8;
   font-size: 0.97rem;
 }
+
 ion-icon {
   color: #94A3B8;
   font-size: 1.3rem;
@@ -112,4 +121,77 @@ ion-icon {
   height: 30px;
   margin: 10px;
   border-radius: 50%;
+}
+
+.sidebar {
+  min-width: 175px;
+  border-right: 1px solid #E2E8F0;
+  height: 100vh;
+}
+
+.bodytodo--head {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  padding: 20px;
+  padding-top: 30px;
+  padding-left: 2px;
+  padding-bottom: 10px;
+  border-bottom: 2.5px solid #1E293B;
+}
+
+.bodytodo--head--h1 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.bodytodo--head--count {
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.taskdisplay {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80vw;
+  margin: 20px 30px;
+}
+
+.completebutton {
+  padding: 8px 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #306BFF;
+  font-weight: 550;
+  color: white;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.completebutton:hover {
+  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
+}
+
+.donebutton {
+  padding: 8px 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #33BFFF;
+  font-weight: 550;
+  color: white;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.donebutton:hover {
+  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
 }
