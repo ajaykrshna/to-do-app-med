@@ -17,7 +17,7 @@ export default function EditTask(props) {
 
     function handleSubmit(event) {
         //event.preventDefault()
-        props.handleAddTask(formData)
+        props.handleEditTask(formData)
     }
 
     return (

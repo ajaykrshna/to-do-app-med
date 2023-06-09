@@ -55,8 +55,17 @@ function App() {
     setFormData(tasks.filter((task) => task.taskid === id)[0])
     setEdit(p => !p)
   }
+
+  function editTaskOld(formData) {
+    setTasks(prevTasks => {
+      return prevTasks.map(task => {
+        return task.taskid === formData.taskid ? { ...formData } : task
+      })
+    })
+    console.log(tasks)
+  }
   /////////////////////////
-  const sidebarinfo = tasks.map(tasks => {
+  /* const sidebarinfo = tasks.map(tasks => {
     return (
       <SidebarTitles
         key={tasks.taskid}
@@ -64,7 +73,7 @@ function App() {
         date={tasks.date}
       />
     )
-  })
+  }) */
 
   const taskstodo = tasks.map(tasks => {
     return (!tasks.completed &&
@@ -106,7 +115,9 @@ function App() {
     <div className="App">
       <div className='todobody'>
         <div className='sidebar'>
-          {sidebarinfo}
+          <SidebarTitles
+            tasks={tasks}
+            />
         </div>
         <div className='tasksbody'>
           <Header />
@@ -134,7 +145,7 @@ function App() {
         {
           edit &&
           <EditTask
-            handleAddTask={addTaskNew}
+            handleEditTask={editTaskOld}
             formData={formData}
           />
         }

@@ -35,14 +35,16 @@ body {
 }
 
 .header--search {
-  margin: 10px 20px;
+  margin: 10px 20px 10px 0px;
+  border-bottom: 1px solid #E2E8F0;
+  width: 250px;
 }
 
 .header--search input {
   border: 1px solid #E2E8F0;
   color: #94A3B8;
   align-self: flex-end;
-  margin: 2px auto;
+  margin: 2px auto 10px 20px;
   border-radius: 40px;
   width: 170px;
   height: 40px;
@@ -322,7 +324,7 @@ ion-icon {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  background-color: red;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .sidetitle {
