@@ -10,20 +10,22 @@ export default function SidebarTitles(props) {
 
     const [index, setIndex] = useState(0)
     useEffect(() => {
-        for (let i; i < props.tasks.length; i) {
-            if (search == props.tasks[i].heading) {
-                setIndex(i + 1)
+        for (let i = 0; i < props.tasks.length; i++) {
+            console.log(i)
+            if (search === props.tasks[i].heading) {
+                setIndex(i)
+                console.log(index)
             }
         }
-    }, [search])
+    },[search])
 
     const searchRes = (
-        <div className='searchresults'>
+        <div className='sidebartitles'>
             <h2 className='searchresults--head'>Search Results</h2>
             <SideSearch
-                key={props.tasks.taskid}
-                title={props.tasks.heading}
-                date={props.tasks.date}
+                key={props.tasks[index].taskid}
+                title={props.tasks[index].heading}
+                date={props.tasks[index].date}
             />
         </div>
     )
