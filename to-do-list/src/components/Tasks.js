@@ -13,14 +13,15 @@ export default function Tasks(props) {
             <div className='task--data'>
                 <div className='task--edit'>
                     <h2 className='task--name'>{props.heading}</h2>
-                    <div 
-                    className='task--edit--button'
-                    onClick={props.handleEdit}
-                    >
+                    <div
+                        className='task--edit--button'
+                        onClick={props.handleEdit}>
                         <ion-icon name="create-outline"></ion-icon>
                     </div>
+                    <div className='delete' onClick={props.handleDelete}>
+                        <ion-icon name="trash-outline" className='delete-icon'></ion-icon>
+                    </div>
                 </div>
-
                 <div className='task--info'>{props.desc}</div>
                 <div className='task--type--container'>
                     <p className='task--type'>{props.type}</p>

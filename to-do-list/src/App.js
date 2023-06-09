@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import Bodytodo from './components/Bodytodo';
 import Bodycompleted from './components/Bodycompleted';
-import data from './components/data';
 import Addtask from './components/Addtask';
 import SidebarTitles from './components/SidebarTitles';
 import EditTask from './components/EditTask';
@@ -17,8 +16,8 @@ function App() {
 
   const [id, setId] = useState(tasks.length + 1)
 
-  const leftcount = tasks.filter(tasks => !tasks.completed).length
-  const donecount = tasks.filter(tasks => tasks.completed).length
+  const leftcount = tasks ? tasks.filter(tasks => !tasks.completed).length : 0
+  const donecount = tasks ? tasks.filter(tasks => tasks.completed).length : 0
 
   function complete(id) {
     setTasks(prevTasks => {
@@ -65,16 +64,16 @@ function App() {
     console.log(tasks)
   }
   /////////////////////////
-  /* const sidebarinfo = tasks.map(tasks => {
-    return (
-      <SidebarTitles
-        key={tasks.taskid}
-        title={tasks.heading}
-        date={tasks.date}
-      />
-    )
-  }) */
 
+  /////////////////////////
+
+  function delData(id) {
+    setTasks(prevTasks => {
+      return prevTasks.filter(task => !(task.taskid === id))
+    })
+  }
+
+  /////////////////////////
   const taskstodo = tasks.map(tasks => {
     return (!tasks.completed &&
       <Tasks
@@ -86,6 +85,7 @@ function App() {
         completed={tasks.completed}
         handleTask={() => complete(tasks.taskid)}
         handleEdit={() => getData(tasks.taskid)}
+        handleDelete={() => delData(tasks.taskid)}
       />
     )
   })
@@ -101,6 +101,7 @@ function App() {
         date={tasks.date}
         completed={tasks.completed}
         handleEdit={() => getData(tasks.taskid)}
+        handleDelete={() => delData(tasks.taskid)}
         handleTask={() => complete(tasks.taskid)}
       />
     )
@@ -117,7 +118,7 @@ function App() {
         <div className='sidebar'>
           <SidebarTitles
             tasks={tasks}
-            />
+          />
         </div>
         <div className='tasksbody'>
           <Header />

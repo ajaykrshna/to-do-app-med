@@ -19,7 +19,7 @@ body {
 
 .header--logo--text {
   padding: 15px 20px;
-  border-bottom: 1px solid #EEF2F6;
+  border-bottom: 1px solid #E2E8F0;
   /* border-right: 1px solid #EEF2F6; */
   font-size: 1.2rem;
 
@@ -32,6 +32,11 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #EEF2F6;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  background-color: #fff;
+  z-index: 999;
 }
 
 .header--search {
@@ -80,16 +85,8 @@ body {
   display: flex;
   align-items: center;
 }
-
-
-.task--edit--button {
-  color: #000;
-}
-
-.task--edit--button:hover {
-  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.25);
   
-}
+
 .task--name {
   font-size: 1.6rem;
 }
@@ -132,7 +129,12 @@ body {
 
 ion-icon {
   color: #94A3B8;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  --ionicon-stroke-width: 16px;
+}
+
+ion-icon:hover{
+  --ionicon-stroke-width: 40px;
 }
 
 /* .task--color {
@@ -145,6 +147,7 @@ ion-icon {
 
 .tasksbody {
   margin-left: 250px;
+  margin-top: 80px;
 }
 
 .sidebar {
@@ -152,6 +155,8 @@ ion-icon {
   border-right: 1px solid #E2E8F0;
   height: 100vh;
   position: fixed;
+  background-color: #EEF2F6;
+  z-index: 999;
 }
 
 .bodytodo--head {
@@ -337,3 +342,8 @@ ion-icon {
   /* margin-left: 3px; */
   font-size: 0.95rem;
 }
+
+.delete {
+  margin-left: 4px;
+}
+
