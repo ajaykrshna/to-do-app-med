@@ -13,7 +13,10 @@ export default function Tasks(props) {
             <div className='task--data'>
                 <div className='task--edit'>
                     <h2 className='task--name'>{props.heading}</h2>
-                    <div className='task--edit--button'>
+                    <div 
+                    className='task--edit--button'
+                    onClick={props.handleEdit}
+                    >
                         <ion-icon name="create-outline"></ion-icon>
                     </div>
                 </div>
