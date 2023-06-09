@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Bodytodo from './components/Bodytodo';
 import Bodycompleted from './components/Bodycompleted';
 import data from './components/data';
+import Addtask from './components/Addtask';
 
 function App() {
   const [tasks, setTasks] = useState(data)
@@ -51,7 +52,7 @@ function App() {
   })
 
 
-  return (
+  /* return (
     <div className="App">
       <Header />
       <div className='todobody'>
@@ -71,8 +72,15 @@ function App() {
           </div>
         </div>
       </div>
+      <div className='addtask'>
+        <Addtask />
+      </div>
     </div>
-  );
+  ); */
+
+  return(
+    <Addtask/>
+  )
 }
 
 export default App;
