@@ -51,8 +51,13 @@ function App() {
     )
   })
 
+  const [showAddtask, setShowAddTask] = useState(false)
+  function handleAddTask() {
+    setShowAddTask(prevState => !prevState)
+  }
 
-  /* return (
+
+  return (
     <div className="App">
       <Header />
       <div className='todobody'>
@@ -73,14 +78,11 @@ function App() {
         </div>
       </div>
       <div className='addtask'>
-        <Addtask />
+        <button className='buttonadd' onClick={handleAddTask}>Add Task</button>
+        {showAddtask && <Addtask />}
       </div>
     </div>
-  ); */
-
-  return(
-    <Addtask/>
-  )
+  );
 }
 
 export default App;

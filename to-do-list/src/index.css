@@ -202,6 +202,9 @@ ion-icon {
 }
 
 .addtask--form{
+  position: fixed;
+  bottom: 150px;
+  right: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,13 +212,13 @@ ion-icon {
   border: 2px solid #94A3B8;
   border-radius: 20px;
   width: 450px;
-  height: 300px;
+  height: 350px;
 }
 
 .form--name--div {
   padding: 10px;
   width: 320px;
-  height: 30px;
+  height: 40px;
   margin: 10px;
 }
 
@@ -247,7 +250,7 @@ ion-icon {
 .form--name--date {
   padding: 10px;
   width: 140px;
-  height: 30px;
+  height: 40px;
   margin: 10px;
 }
 .buttondiv{
@@ -266,4 +269,14 @@ ion-icon {
   background-color: #306BFF;
   color: #F0FAFF;
   font-size: 1.2rem;
+}
+
+.buttonadd:hover{
+  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
+}
+
+.addtask{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
 }
