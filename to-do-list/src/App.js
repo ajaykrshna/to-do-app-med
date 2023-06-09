@@ -22,6 +22,18 @@ function App() {
     })
   }
 
+  function addTaskNew(formData,count){
+    setTasks(prevTasks => {
+      return [
+        ...prevTasks,
+        {
+          ...formData,
+          taskid:count
+        }
+      ]
+    })
+  }
+
   const taskstodo = tasks.map(tasks => {
     return (!tasks.completed &&
       <Tasks
@@ -79,7 +91,11 @@ function App() {
       </div>
       <div className='addtask'>
         <button className='buttonadd' onClick={handleAddTask}>Add Task</button>
-        {showAddtask && <Addtask />}
+        {showAddtask && 
+        <Addtask 
+          handleAddTask={addTaskNew}
+        />
+        }
       </div>
     </div>
   );

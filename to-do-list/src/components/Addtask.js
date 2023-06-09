@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-export default function Addtask() {
+export default function Addtask(props) {
+    let count = 4
     const [formData, setFormData] = useState({
+        taskid:count,
         taskname: "",
         desc: "",
         type: "",
@@ -20,9 +22,11 @@ export default function Addtask() {
     }
 
     function handleSubmit(event) {
-        event.preventDefault()
-        console.log(formData)
+        //event.preventDefault()
+        props.handleAddTask(formData,count)
+        count = count+1
     }
+
     return (
         <div className='back'>
             <div className='addtask--form'>
