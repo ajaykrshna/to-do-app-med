@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import './index.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
-import Sidebar from './components/Sidebar';
 import Bodytodo from './components/Bodytodo';
 import Bodycompleted from './components/Bodycompleted';
 import data from './components/data';
 import Addtask from './components/Addtask';
+import SidebarTitles from './components/SidebarTitles';
+import { useEffect } from 'react';
 
 function App() {
-  const [tasks, setTasks] = useState(data)
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem('tasks')) || []
+  )
+
+  const [id, setId] = useState(tasks.length + 1)
 
   const leftcount = tasks.filter(tasks => !tasks.completed).length
   const donecount = tasks.filter(tasks => tasks.completed).length
@@ -22,17 +27,33 @@ function App() {
     })
   }
 
-  function addTaskNew(formData,count){
+  function addTaskNew(formData) {
     setTasks(prevTasks => {
       return [
         ...prevTasks,
         {
           ...formData,
-          taskid:count
+          taskid: id
         }
       ]
     })
+    setId(prevId => prevId + 1)
+    console.log(tasks)
   }
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
+  const sidebarinfo = tasks.map(tasks => {
+    return (
+      <SidebarTitles
+        key={tasks.taskid}
+        title={tasks.heading}
+        date={tasks.date}
+      />
+    )
+  })
 
   const taskstodo = tasks.map(tasks => {
     return (!tasks.completed &&
@@ -68,13 +89,14 @@ function App() {
     setShowAddTask(prevState => !prevState)
   }
 
-
   return (
     <div className="App">
-      <Header />
       <div className='todobody'>
-        <Sidebar />
+        <div className='sidebar'>
+          {sidebarinfo}
+        </div>
         <div className='tasksbody'>
+          <Header />
           <Bodytodo
             count={leftcount}
           />
@@ -90,11 +112,11 @@ function App() {
         </div>
       </div>
       <div className='addtask'>
-        <button className='buttonadd' onClick={handleAddTask}>Add Task</button>
-        {showAddtask && 
-        <Addtask 
-          handleAddTask={addTaskNew}
-        />
+        <button className='buttonadd' onClick={handleAddTask}>{showAddtask ? "Cancel" : "Add Task"}</button>
+        {showAddtask &&
+          <Addtask
+            handleAddTask={addTaskNew}
+          />
         }
       </div>
     </div>

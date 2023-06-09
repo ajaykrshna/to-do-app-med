@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family:  Inter;
+  font-family: Inter;
 }
 
 
@@ -16,22 +16,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-nav {
-  display: flex;
-  border-bottom: 1px solid #EEF2F6;
-  flex-wrap: wrap;
-}
-
 .header--logo--text {
   padding: 15px 20px;
   border-bottom: 1px solid #EEF2F6;
-  border-right: 1px solid #EEF2F6;
+  /* border-right: 1px solid #EEF2F6; */
   font-size: 1.2rem;
+
 }
 
 .header--head--text {
   font-size: 1.1rem;
-  padding: 15px 40px;
+  padding: 17px 40px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #EEF2F6;
+}
+
+.header--search {
+  margin: 10px 20px;
 }
 
 .header--search input {
@@ -45,7 +48,7 @@ nav {
   padding-left: 30px;
   outline: none;
   font-size: 0.9rem;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .todobody {
@@ -70,6 +73,20 @@ nav {
   padding: 25px;
 }
 
+.task--edit {
+  display: flex;
+  align-items: center;
+}
+
+
+.task--edit--button {
+  color: #000;
+}
+
+.task--edit--button:hover {
+  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  
+}
 .task--name {
   font-size: 1.6rem;
 }
@@ -115,18 +132,23 @@ ion-icon {
   font-size: 1.3rem;
 }
 
-.task--color {
+/* .task--color {
   background-color: #D2ECC6;
   width: 30px;
   height: 30px;
   margin: 10px;
   border-radius: 50%;
+} */
+
+.tasksbody {
+  margin-left: 250px;
 }
 
 .sidebar {
-  min-width: 175px;
+  width: 250px;
   border-right: 1px solid #E2E8F0;
   height: 100vh;
+  position: fixed;
 }
 
 .bodytodo--head {
@@ -138,6 +160,19 @@ ion-icon {
   padding-left: 2px;
   padding-bottom: 10px;
   border-bottom: 2.5px solid #1E293B;
+  width: 250px;
+}
+
+.bodycompleted--head {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  padding: 20px;
+  padding-top: 30px;
+  padding-left: 2px;
+  padding-bottom: 10px;
+  border-bottom: 2.5px solid #78C552;
+  width: 250px;
 }
 
 .bodytodo--head--h1 {
@@ -177,7 +212,7 @@ ion-icon {
 }
 
 .completebutton:hover {
-  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.25);
 }
 
 .donebutton {
@@ -193,15 +228,15 @@ ion-icon {
 }
 
 .donebutton:hover {
-  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.25);
 }
 
 .formtask {
- padding: 10px;
- margin-right: 20px; 
+  padding: 10px;
+  margin-right: 20px;
 }
 
-.addtask--form{
+.addtask--form {
   position: fixed;
   bottom: 150px;
   right: 50px;
@@ -211,7 +246,7 @@ ion-icon {
   background-color: #EEF2F6;
   border: 2px solid #94A3B8;
   border-radius: 20px;
-  width: 450px;
+  width: 400px;
   height: 350px;
 }
 
@@ -228,7 +263,7 @@ ion-icon {
   border: 2px solid #EEF2F6;
   border-radius: 10px;
   padding: 7px 0;
-  padding-left:15px;
+  padding-left: 15px;
   font-size: 1rem;
   letter-spacing: 0.015rem;
   outline: none;
@@ -241,7 +276,7 @@ ion-icon {
   border-radius: 10px;
   padding: 7px 0;
   padding-right: 7px;
-  padding-left:15px;
+  padding-left: 15px;
   font-size: 1rem;
   letter-spacing: 0.015rem;
   outline: none;
@@ -253,7 +288,8 @@ ion-icon {
   height: 40px;
   margin: 10px;
 }
-.buttondiv{
+
+.buttondiv {
   display: flex;
   align-content: center;
   align-items: center;
@@ -271,12 +307,30 @@ ion-icon {
   font-size: 1.2rem;
 }
 
-.buttonadd:hover{
-  box-shadow: 1px 3px 6px 0px rgba(0,0,0, 0.25);
+.buttonadd:hover {
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.25);
 }
 
-.addtask{
+.addtask {
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.sidebartitles {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: red;
+}
+
+.sidetitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sidedate {
+  margin-top: 2px;
+  /* margin-left: 3px; */
+  font-size: 0.95rem;
 }

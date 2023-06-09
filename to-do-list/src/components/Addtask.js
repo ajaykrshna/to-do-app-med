@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
 export default function Addtask(props) {
-    let count = 4
     const [formData, setFormData] = useState({
-        taskid:count,
-        taskname: "",
+        taskid: 0,
+        heading: "",
         desc: "",
         type: "",
         date: "",
         completed: false
     })
-
     function handleOnChange(event) {
         const { name, value } = event.target
         setFormData(prevData => {
@@ -23,8 +21,7 @@ export default function Addtask(props) {
 
     function handleSubmit(event) {
         //event.preventDefault()
-        props.handleAddTask(formData,count)
-        count = count+1
+        props.handleAddTask(formData)
     }
 
     return (
@@ -36,9 +33,9 @@ export default function Addtask(props) {
                             className='form--name'
                             type='text'
                             placeholder='Task Name'
-                            name='taskname'
+                            name='heading'
                             onChange={handleOnChange}
-                            value={formData.taskname}
+                            value={formData.heading}
                         />
                     </div>
                     <div className='form--name--div'>

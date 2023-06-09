@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Addtask from './Addtask';
 
 export default function Tasks(props) {
     const doneButton = (
@@ -10,7 +11,13 @@ export default function Tasks(props) {
     return (
         <div className='task'>
             <div className='task--data'>
-                <h2 className='task--name'>{props.heading}</h2>
+                <div className='task--edit'>
+                    <h2 className='task--name'>{props.heading}</h2>
+                    <div className='task--edit--button'>
+                        <ion-icon name="create-outline"></ion-icon>
+                    </div>
+                </div>
+
                 <div className='task--info'>{props.desc}</div>
                 <div className='task--type--container'>
                     <p className='task--type'>{props.type}</p>
