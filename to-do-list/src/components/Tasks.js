@@ -13,13 +13,15 @@ export default function Tasks(props) {
             <div className='task--data'>
                 <div className='task--edit'>
                     <h2 className='task--name' id={`head${props.taskid}`}>{props.heading}</h2>
-                    <div
-                        className='task--edit--button'
-                        onClick={props.handleEdit}>
-                        <ion-icon name="create-outline"></ion-icon>
-                    </div>
-                    <div className='delete' onClick={props.handleDelete}>
-                        <ion-icon name="trash-outline" className='delete-icon'></ion-icon>
+                    <div className='task--edit--div'>
+                        <div
+                            className='task--edit--button'
+                            onClick={props.handleEdit}>
+                            <ion-icon name="create-outline"></ion-icon>
+                        </div>
+                        <div className='delete' onClick={props.handleDelete}>
+                            <ion-icon name="trash-outline" className='delete-icon'></ion-icon>
+                        </div>
                     </div>
                 </div>
                 <div className='task--info'>{props.desc}</div>
@@ -29,8 +31,10 @@ export default function Tasks(props) {
                 </div>
             </div>
             <div className='task--date'>
-                <ion-icon name="calendar-outline"></ion-icon>
-                <p className='task--date--day'>{props.date}</p>
+                <div className='task--date--date'>
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <p className='task--date--day'>{props.date}</p>
+                </div>
                 <div className='compbutton'>
                     {props.completed ? doneButton : completebutton}
                 </div>

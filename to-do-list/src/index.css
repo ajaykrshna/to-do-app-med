@@ -85,15 +85,17 @@ body {
 .task--edit {
   display: flex;
   align-items: center;
-}
-  
-.task--edit--button {
-  padding-left: 20px;
+  justify-content: space-between;
 }
 
-.delete {
-  margin-right: auto;
+.task--edit--div {
+  display: flex;
 }
+
+.task--edit--button {
+  margin-right: 8px;
+}
+
 .task--name {
   font-size: 1.6rem;
 }
@@ -125,7 +127,12 @@ body {
   padding: 15px 25px;
   display: flex;
   align-items: center;
-  margin-right: auto;
+  justify-content: space-between;
+}
+
+.task--date--date {
+  display: flex;
+  align-items: center;
 }
 
 .task--date--day {
@@ -135,8 +142,7 @@ body {
   margin-right: auto;
 }
 
-.compbutton{
-  margin-right: auto;
+.compbutton {
   padding-left: 10px;
 }
 
@@ -146,7 +152,7 @@ ion-icon {
   --ionicon-stroke-width: 16px;
 }
 
-ion-icon:hover{
+ion-icon:hover {
   --ionicon-stroke-width: 40px;
 }
 
@@ -164,7 +170,7 @@ ion-icon:hover{
 }
 
 .sidebar {
-  width: 250px;
+  width: 248px;
   border-right: 1px solid #E2E8F0;
   height: 100vh;
   position: fixed;
@@ -181,7 +187,7 @@ ion-icon:hover{
   padding-left: 2px;
   padding-bottom: 10px;
   border-bottom: 2.5px solid #1E293B;
-  width: 250px;
+  width: 280px;
 }
 
 .bodycompleted--head {
@@ -193,7 +199,7 @@ ion-icon:hover{
   padding-left: 2px;
   padding-bottom: 10px;
   border-bottom: 2.5px solid #78C552;
-  width: 250px;
+  width: 280px;
 }
 
 .bodytodo--head--h1 {
@@ -229,7 +235,7 @@ ion-icon:hover{
   font-weight: 550;
   color: white;
   cursor: pointer;
-  margin-right: auto;
+  font-size: 0.95rem;
 }
 
 .completebutton:hover {
@@ -245,7 +251,7 @@ ion-icon:hover{
   font-weight: 550;
   color: white;
   cursor: pointer;
-  margin-right: auto;
+  font-size: 0.97rem;
 }
 
 .donebutton:hover {
@@ -259,7 +265,7 @@ ion-icon:hover{
 
 .addtask--form {
   position: fixed;
-  bottom: 150px;
+  bottom: 130px;
   right: 50px;
   display: flex;
   flex-direction: column;
@@ -267,13 +273,13 @@ ion-icon:hover{
   background-color: #EEF2F6;
   border: 2px solid #94A3B8;
   border-radius: 20px;
-  width: 400px;
+  width: 350px;
   height: 350px;
 }
 
 .form--name--div {
   padding: 10px;
-  width: 320px;
+  width: 280px;
   height: 40px;
   margin: 10px;
 }
@@ -312,16 +318,16 @@ ion-icon:hover{
 
 .buttondiv {
   display: flex;
-  align-content: center;
   align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
 .buttonadd {
-  min-width: max-content;
-  min-height: max-content;
+  height: 60px;
   border-radius: 25px;
   padding: 18px;
-  margin-top: 12px;
+  margin-top: 18px;
   border: none;
   background-color: #306BFF;
   color: #F0FAFF;
@@ -348,6 +354,12 @@ ion-icon:hover{
 .sidetitle {
   font-size: 1.4rem;
   font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sidetitle:hover {
+  color: darkblue;
 }
 
 .sidedate {
