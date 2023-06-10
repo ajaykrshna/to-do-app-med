@@ -67,9 +67,10 @@ body {
   margin: 20px;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
-  max-width: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
 
 .task:hover {
@@ -86,7 +87,13 @@ body {
   align-items: center;
 }
   
+.task--edit--button {
+  padding-left: 20px;
+}
 
+.delete {
+  margin-right: auto;
+}
 .task--name {
   font-size: 1.6rem;
 }
@@ -125,6 +132,12 @@ body {
   margin-left: 7px;
   color: #94A3B8;
   font-size: 0.97rem;
+  margin-right: auto;
+}
+
+.compbutton{
+  margin-right: auto;
+  padding-left: 10px;
 }
 
 ion-icon {

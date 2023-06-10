@@ -65,7 +65,7 @@ export default function EditTask(props) {
                                 value={formData.date}
                             />
                         </div>
-                        <button className='buttonadd'>Add Task</button>
+                        <button className='buttonadd'>Edit Task</button>
                     </div>
                 </form>
             </div>

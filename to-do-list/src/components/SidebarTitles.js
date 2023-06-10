@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SideSearch from './SideSearch';
-import { useEffect } from 'react';
 
 export default function SidebarTitles(props) {
     const [search, setSearch] = useState("")
@@ -8,25 +7,29 @@ export default function SidebarTitles(props) {
         setSearch(event.target.value)
     }
 
-    const [index, setIndex] = useState(0)
-    useEffect(() => {
-        for (let i = 0; i < props.tasks.length; i++) {
-            console.log(i)
-            if (search === props.tasks[i].heading) {
-                setIndex(i)
-                console.log(index)
-            }
-        }
-    },[search])
+    const searchArray = props.tasks.filter(task => {
+        return task.heading.toLowerCase().indexOf(search.toLowerCase()) > -1
+    })
 
+
+    const displaySearch = searchArray.map(task => {
+        return (
+            <SideSearch
+                key={task.taskid}
+                taskid={task.taskid}
+                title={task.heading}
+                date={task.date}
+            />)
+    })
     const searchRes = (
         <div className='sidebartitles'>
             <h2 className='searchresults--head'>Search Results</h2>
-            <SideSearch
-                key={props.tasks[index].taskid}
-                title={props.tasks[index].heading}
-                date={props.tasks[index].date}
-            />
+            {!searchArray.length ?
+                <SideSearch
+                    title={"Not Found"}
+                />
+                :
+                displaySearch}
         </div>
     )
 
@@ -34,6 +37,7 @@ export default function SidebarTitles(props) {
         return (
             <SideSearch
                 key={tasks.taskid}
+                taskid={tasks.taskid}
                 title={tasks.heading}
                 date={tasks.date}
             />

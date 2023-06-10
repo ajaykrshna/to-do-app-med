@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Addtask from './Addtask';
+import React from 'react';
 
 export default function Tasks(props) {
     const doneButton = (
@@ -8,11 +7,12 @@ export default function Tasks(props) {
     const completebutton = (
         <button className='completebutton' onClick={props.handleTask}>Mark as Done</button>
     )
+    console.log(`head${props.taskid}`)
     return (
         <div className='task'>
             <div className='task--data'>
                 <div className='task--edit'>
-                    <h2 className='task--name'>{props.heading}</h2>
+                    <h2 className='task--name' id={`head${props.taskid}`}>{props.heading}</h2>
                     <div
                         className='task--edit--button'
                         onClick={props.handleEdit}>
@@ -31,7 +31,9 @@ export default function Tasks(props) {
             <div className='task--date'>
                 <ion-icon name="calendar-outline"></ion-icon>
                 <p className='task--date--day'>{props.date}</p>
-                {props.completed ? doneButton : completebutton}
+                <div className='compbutton'>
+                    {props.completed ? doneButton : completebutton}
+                </div>
             </div>
         </div>
     )

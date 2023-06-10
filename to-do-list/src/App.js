@@ -38,7 +38,6 @@ function App() {
       ]
     })
     setId(prevId => prevId + 1)
-    console.log(tasks)
   }
 
   useEffect(() => {
@@ -78,6 +77,7 @@ function App() {
     return (!tasks.completed &&
       <Tasks
         key={tasks.taskid}
+        taskid={tasks.taskid}
         heading={tasks.heading}
         desc={tasks.desc}
         type={tasks.type}
@@ -109,7 +109,7 @@ function App() {
 
   const [showAddtask, setShowAddTask] = useState(false)
   function handleAddTask() {
-    setShowAddTask(prevState => !prevState)
+    edit ? setEdit(prev => !prev) :setShowAddTask(prevState => !prevState)
   }
 
   return (
@@ -137,7 +137,7 @@ function App() {
         </div>
       </div>
       <div className='addtask'>
-        <button className='buttonadd' onClick={handleAddTask}>{showAddtask ? "Cancel" : "Add Task"}</button>
+        <button className='buttonadd' onClick={handleAddTask}>{showAddtask || edit ? "Cancel" : "Add Task"}</button>
         {showAddtask &&
           <Addtask
             handleAddTask={addTaskNew}

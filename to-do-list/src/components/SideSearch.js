@@ -4,7 +4,7 @@ export default function SideSearch(props) {
     
     return (
         <div className='sidebartitles'>
-            <h3 className='sidetitle'>{props.title}</h3>
+            <a className='sidetitle' href={`#head${props.taskid}`}>{props.title}</a>
             <p className='sidedate'>{props.date}</p>
         </div>
     )
