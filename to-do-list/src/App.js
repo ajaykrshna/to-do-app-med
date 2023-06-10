@@ -44,8 +44,6 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(tasks))
   }, [tasks])
 
-  /////////////////////////
-
   const [formData, setFormData] = useState({})
   const [edit, setEdit] = useState(false)
 
@@ -62,9 +60,6 @@ function App() {
     })
     console.log(tasks)
   }
-  /////////////////////////
-
-  /////////////////////////
 
   function delData(id) {
     setTasks(prevTasks => {
@@ -72,7 +67,6 @@ function App() {
     })
   }
 
-  /////////////////////////
   const taskstodo = tasks.map(tasks => {
     return (!tasks.completed &&
       <Tasks

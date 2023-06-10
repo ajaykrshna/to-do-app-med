@@ -20,7 +20,6 @@ body {
 .header--logo--text {
   padding: 15px 20px;
   border-bottom: 1px solid #E2E8F0;
-  /* border-right: 1px solid #EEF2F6; */
   font-size: 1.2rem;
 
 }
@@ -155,14 +154,6 @@ ion-icon {
 ion-icon:hover {
   --ionicon-stroke-width: 40px;
 }
-
-/* .task--color {
-  background-color: #D2ECC6;
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  border-radius: 50%;
-} */
 
 .tasksbody {
   margin-left: 250px;
@@ -364,7 +355,6 @@ ion-icon:hover {
 
 .sidedate {
   margin-top: 2px;
-  /* margin-left: 3px; */
   font-size: 0.95rem;
 }
 
