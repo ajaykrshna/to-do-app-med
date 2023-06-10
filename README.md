@@ -1,2 +1,2 @@
-# to-do-app-med
-to-do app for media council
+# To do App
+Regular To Do App made for Media Council
